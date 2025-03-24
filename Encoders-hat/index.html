@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse Movment - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="home/home.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Login</h1>
+            <form id="login-form">
+                <input type="text" id="username" class="input-field" placeholder="Usuário" required>
+                <input type="password" id="password" class="input-field" placeholder="Senha" required>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            <div id="loading-spinner" class="spinner" style="display: none;"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Já tem uma conta? <a href="#">Clique aqui</a> para se registrar.</p>
+    </div>
+
+    <script src="home/home.js"></script>
+</body>
+</html>
