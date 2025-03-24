@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse Movment - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="dashboard.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+    <div id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+    <div class="flex h-screen hidden" id="main-content">
+        <aside class="w-64 bg-gray-900 p-5 flex flex-col fade-in">
+            <h1 class="text-3xl font-bold text-white">Synapse Movment</h1>
+            <nav class="mt-6 space-y-2">
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Dashboard</a>
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Setores</a>
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Máquinas</a>
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Funcionários</a>
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Configurações</a>
+            </nav>
+        </aside>
+        <main class="flex-1 p-6">
+            <header class="flex justify-between items-center mb-6 slide-up">
+                <h2 class="text-4xl font-bold">Dashboard</h2>
+                <input type="text" placeholder="Pesquisar..." class="p-3 bg-gray-800 text-white border border-gray-600 rounded-lg">
+            </header>
+            <div class="grid grid-cols-3 gap-6">
+                <div class="p-6 bg-gray-800 rounded-xl shadow-md slide-up hover:scale-105 transition-transform">
+                    <h3 class="text-lg font-semibold text-white">Setores Ativos</h3>
+                    <img src="https://i.pinimg.com/736x/fb/62/ce/fb62cee990324279f05a189189ba547c.jpg" alt="Setores" class="w-full h-32 object-cover rounded-lg mt-4">
+                    <p class="text-3xl font-bold">12</p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-xl shadow-md slide-up hover:scale-105 transition-transform">
+                    <h3 class="text-lg font-semibold text-white">Máquinas Operacionais</h3>
+                    <img src="https://i.pinimg.com/736x/a9/cc/c5/a9ccc578e32f35ceac0b8ac1f081c3d4.jpg" alt="Máquinas" class="w-full h-32 object-cover rounded-lg mt-4">
+                    <p class="text-3xl font-bold">24</p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-xl shadow-md slide-up hover:scale-105 transition-transform">
+                    <h3 class="text-lg font-semibold text-white">Funcionários Ativos</h3>
+                    <img src="https://i.pinimg.com/736x/ca/3b/15/ca3b151fdbc1827dc3204e4d8ff444c2.jpg" alt="Funcionários" class="w-full h-32 object-cover rounded-lg mt-4">
+                    <p class="text-3xl font-bold">58</p>
+                </div>
+            </div>
+            <section class="mt-6 bg-gray-800 p-6 rounded-xl slide-up">
+                <h3 class="text-lg font-semibold text-white">Notificações</h3>
+                <div class="notification-list mt-2 space-y-2">
+                    <div class="notification-item urgent">
+                        <span class="icon">🔥</span>
+                        <p class="text-sm">Máquina #5 precisa de manutenção.</p>
+                        <button class="action-btn">Ver Detalhes</button>
+                    </div>
+                    <div class="notification-item alert">
+                        <span class="icon">⚠️</span>
+                        <p class="text-sm">Novo funcionário cadastrado: João Silva.</p>
+                        <button class="action-btn">Marcar como Lido</button>
+                    </div>
+                    <div class="notification-item informational">
+                        <span class="icon">✅</span>
+                        <p class="text-sm">Setor 3 está operando acima da capacidade.</p>
+                        <button class="action-btn">Ignorar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
