@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Funcionários</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="dashboard.css" rel="stylesheet">
+    <style>
+        .status-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .status-green {
+            background-color: #4CAF50;
+        }
+        .status-yellow {
+            background-color: #FFEB3B;
+        }
+        .status-red {
+            background-color: #F44336;
+        }
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .card {
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); 
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #1F1F1F; 
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            color: white;
+        }
+        .input-field {
+            background-color: #2A2A2A;
+            color: white;
+            border: 1px solid #898989;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #FFFFFF; 
+        }
+        .button {
+            background-color: #2A2A2A;
+            color: white; 
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #898989;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <div class="flex h-screen">
+        <aside class="w-64 bg-gray-900 p-5 flex flex-col">
+            <h1 class="text-3xl font-bold text-white">Synapse Movment</h1>
+            <nav class="mt-6 space-y-2">
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Dashboard</a>
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Setores</a>
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Máquinas</a>
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Funcionários</a>
+                <a href="#" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Configurações</a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-6">
+            <header class="flex justify-between items-center mb-6">
+                <h2 class="text-4xl font-bold">Gerenciamento de Funcionários</h2>
+                <div class="flex items-center space-x-4">
+                    <input type="text" placeholder="Pesquisar..." class="p-3 bg-gray-800 text-white border border-gray-600 rounded-lg">
+                    <button class="p-3 bg-blue-600 hover:bg-blue-500 rounded-lg text-white">🔍</button>
+                    <button id="addEmployeeBtn" class="p-3 bg-green-600 hover:bg-green-500 rounded-lg text-white">🆕 Adicionar Funcionário</button>
+                    <button class="p-3 bg-gray-700 hover:bg-gray-600 rounded-lg text-white">📂 Exportar</button>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-3 gap-6">
+                <div class="card p-6 bg-gray-800 rounded-xl shadow-md hover:scale-105 transition-transform">
+                    <h3 class="text-lg font-semibold text-white">João Silva <span class="status-icon status-green" title="Ativo"></span></h3>
+                    <img src="https://i.pinimg.com/736x/52/28/48/5228483be117f39225e179e8c2205263.jpg" alt="João Silva" class="profile-pic mt-4">
+                    <p class="text-xl mt-2">Cargo: Gerente</p>
+                    <button class="mt-4 p-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-500">✏️ Editar</button>
+                    <button class="mt-2 p-2 bg-red-600 text-white rounded-lg hover:bg-red-500">🗑️ Remover</button>
+                </div>
+                <div class="card p-6 bg-gray-800 rounded-xl shadow-md hover:scale-105 transition-transform">
+                    <h3 class="text-lg font-semibold text-white">Maria Oliveira <span class="status-icon status-yellow" title="Em Férias"></span></h3>
+                    <img src="https://i.pinimg.com/736x/a4/b8/b5/a4b8b5ddf5d9499ea4da730d724a2e06.jpg" alt="Maria Oliveira" class="profile-pic mt-4">
+                    <p class="text-xl mt-2">Cargo: Analista</p>
+                    <button class="mt-4 p-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-500">✏️ Editar</button>
+                    <button class="mt-2 p-2 bg-red-600 text-white rounded-lg hover:bg-red-500">🗑️ Remover</button>
+                </div>
+                <div class="card p-6 bg-gray-800 rounded-xl shadow-md hover:scale-105 transition-transform">
+                    <h3 class="text-lg font-semibold text-white">Carlos Souza <span class="status-icon status-red" title="Afastado"></span></h3>
+                    <img src="https://i.pinimg.com/736x/b9/76/f7/b976f7ea8e3ed486448e37a185fa534f.jpg" alt="Carlos Souza" class="profile-pic mt-4">
+                    <p class="text-xl mt-2">Cargo: Supervisor</p>
+                    <button class="mt-4 p-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-500">✏️ Editar</button>
+                    <button class="mt-2 p-2 bg-red-600 text-white rounded-lg hover:bg-red-500">🗑️ Remover</button>
+                </div>
+            </div>
+            <div id="employeeModal" class="modal">
+                <div class="modal-content">
+                    <h2 class="text-xl font-bold">Adicionar/Editar Funcionário</h2>
+                    <form id="employeeForm">
+                        <div class="mt-4">
+                            <label for="name" class="block text-sm font-medium">Nome</label>
+                            <input type="text" id="name" name="name" class="input-field" required>
+                        </div>
+                        <div class="mt-4">
+                            <label for="position" class="block text-sm font-medium">Cargo</label>
+                            <input type="text" id="position" name="position" class="input-field" required>
+                        </div>
+                        <div class="mt-4">
+                            <label for="status" class="block text-sm font-medium">Status</label>
+                            <select id="status" name="status" class="input-field" required>
+                                <option value="active">Ativo</option>
+                                <option value="vacation">Em Férias</option>
+                                <option value="away">Afastado</option>
+                            </select>
+                        </div>
+                        <div class="mt-4 flex justify-end">
+                            <button type="submit" class="button">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('addEmployeeBtn').addEventListener('click', function() {
+            document.getElementById('employeeModal').style.display = 'flex';
+        });
+
+        document.getElementById('employeeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('employeeModal').style.display = 'none';
+        });
+
+        document.getElementById('employeeModal').addEventListener('click', function(e) {
+            if (e.target === document.getElementById('employeeModal')) {
+                document.getElementById('employeeModal').style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
