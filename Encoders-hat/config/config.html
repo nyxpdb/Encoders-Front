@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - Synapse Movment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-gray-900 p-5 flex flex-col">
+            <h1 class="text-3xl font-bold text-white">Synapse Movment</h1>
+            <nav class="mt-6 space-y-2">
+                <a href="../dashboard/dashboard.html" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Dashboard</a>
+                <a href="" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Setores</a>
+                <a href="../machine/machine.html" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Máquinas</a>
+                <a href="../func/func.html" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Funcionários</a>
+                <a href="../config/config.html" class="block py-3 px-4 text-white bg-gray-800 hover:bg-gray-700 rounded-lg">Configurações</a>
+            </nav>
+        </aside>
+        <main class="flex-1 p-6">
+            <header class="flex justify-between items-center mb-6">
+                <h2 class="text-4xl font-bold">Configurações</h2>
+            </header>
+            <div class="grid grid-cols-3 gap-6">
+                <button class="p-6 bg-gray-800 rounded-xl shadow-md hover:scale-105 transition-transform">
+                    📩 <span class="text-lg font-semibold">Abrir Chamado</span>
+                </button>
+                <button class="p-6 bg-gray-800 rounded-xl shadow-md hover:scale-105 transition-transform">
+                    🔔 <span class="text-lg font-semibold">Ver Notificações</span>
+                </button>
+                <button class="p-6 bg-gray-800 rounded-xl shadow-md hover:scale-105 transition-transform">
+                    🔑 <span class="text-lg font-semibold">Gerenciar Permissões</span>
+                </button>
+                <button class="p-6 bg-gray-800 rounded-xl shadow-md hover:scale-105 transition-transform">
+                    🎨 <span class="text-lg font-semibold">Personalizar Tema</span>
+                </button>
+                <button class="p-6 bg-gray-800 rounded-xl shadow-md hover:scale-105 transition-transform">
+                    📊 <span class="text-lg font-semibold">Relatórios e Estatísticas</span>
+                </button>
+                <button class="p-6 bg-gray-800 rounded-xl shadow-md hover:scale-105 transition-transform">
+                    🔄 <span class="text-lg font-semibold">Backup e Restauração</span>
+                </button>
+            </div>
+            <section class="mt-8 bg-gray-800 p-6 rounded-xl">
+                <h3 class="text-lg font-semibold text-white">Notificações</h3>
+                <div class="notification-list mt-2 space-y-2">
+                    <div class="notification-item urgent flex justify-between items-center p-4 bg-red-600 rounded-lg">
+                        <span class="icon">🔥</span>
+                        <p class="text-sm text-white">Máquina #5 precisa de manutenção.</p>
+                        <button class="action-btn text-white bg-transparent hover:bg-gray-700 p-2 rounded-md">Ver Detalhes</button>
+                    </div>
+                    <div class="notification-item alert flex justify-between items-center p-4 bg-yellow-600 rounded-lg">
+                        <span class="icon">⚠️</span>
+                        <p class="text-sm text-white">Novo funcionário cadastrado: João Silva.</p>
+                        <button class="action-btn text-white bg-transparent hover:bg-gray-700 p-2 rounded-md">Marcar como Lido</button>
+                    </div>
+                    <div class="notification-item informational flex justify-between items-center p-4 bg-green-600 rounded-lg">
+                        <span class="icon">✅</span>
+                        <p class="text-sm text-white">Setor 3 está operando acima da capacidade.</p>
+                        <button class="action-btn text-white bg-transparent hover:bg-gray-700 p-2 rounded-md">Ignorar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
