@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage Bonita</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cor-primaria: #FF6A13;
+      --cor-secundaria: #FF9A5B;
+      --cor-texto-principal: #F4F4F4;
+      --cor-texto-secundario: #777777;
+      --cor-titulo: #000000;
+      --cor-fundo: #FFFFFF;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-titulo);
+    }
+
+    header {
+      background-color: var(--cor-primaria); /* fundo laranja */
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #FFFFFF; /* texto branco */
+    }
+
+    nav a {
+      color: #FFFFFF; /* links brancos */
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #000000; /* preto no hover */
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--cor-titulo);
+    }
+
+    .hero p {
+      color: var(--cor-texto-secundario);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      background-color: var(--cor-secundaria);
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: var(--cor-primaria);
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #FAFAFA; /* fundo cinza claro */
+    }
+
+    section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--cor-titulo);
+    }
+
+    section p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--cor-texto-secundario);
+      font-size: 1.05rem;
+    }
+
+    footer {
+      border-top: 1px solid #eee;
+      color: var(--cor-texto-secundario);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Minha Marca</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Bem-vindo à nossa homepage</h2>
+    <p>Uma interface limpa e moderna usando a fonte Sora e cores suaves com toques em laranja.</p>
+    <button class="btn">Começar Agora</button>
+  </div>
+
+  <section>
+    <h3>✨ Sobre Nós</h3>
+    <p>Somos apaixonados por design e experiências digitais. Esta página é feita com foco na simplicidade e clareza.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Minha Marca. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
